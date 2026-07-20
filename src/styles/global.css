@@ -1,0 +1,223 @@
+/* ============================================================
+   EduNova Global Styles
+   global.css — layout primitives, scrollbar, focus, utilities
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Root & app shell
+   ---------------------------------------------------------- */
+html {
+  color-scheme: light dark;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+}
+
+/* Main content area grows to fill remaining space */
+main {
+  flex: 1 0 auto;
+}
+
+/* ----------------------------------------------------------
+   Scrollbar (Webkit / Blink)
+   ---------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-neutral-300);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-subtle);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-neutral-400);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-neutral-600);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-neutral-500);
+  }
+}
+
+/* ----------------------------------------------------------
+   Focus styles — global
+   ---------------------------------------------------------- */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-base);
+}
+
+/* Remove focus ring for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ----------------------------------------------------------
+   Container utility
+   ---------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-inline: var(--space-3);
+  }
+}
+
+/* ----------------------------------------------------------
+   Section spacing utility
+   ---------------------------------------------------------- */
+.section {
+  padding-block: var(--space-20);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-12);
+  }
+}
+
+/* ----------------------------------------------------------
+   Visually hidden (accessibility)
+   ---------------------------------------------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ----------------------------------------------------------
+   Interactive states — global link/button baseline
+   ---------------------------------------------------------- */
+button,
+[role='button'],
+[type='button'],
+[type='submit'],
+[type='reset'] {
+  cursor: pointer;
+  user-select: none;
+}
+
+button:disabled,
+[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ----------------------------------------------------------
+   Images
+   ---------------------------------------------------------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------------------------
+   Form baseline
+   ---------------------------------------------------------- */
+input,
+textarea,
+select {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  transition: var(--transition-colors), box-shadow var(--duration-150) var(--ease-in-out);
+  color: var(--text-primary);
+  width: 100%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--border-color-focus);
+  box-shadow: var(--focus-ring);
+}
+
+/* ----------------------------------------------------------
+   Utility — text truncation
+   ---------------------------------------------------------- */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ----------------------------------------------------------
+   Utility — flex helpers
+   ---------------------------------------------------------- */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ----------------------------------------------------------
+   Utility — surface card
+   ---------------------------------------------------------- */
+.card {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--duration-200) var(--ease-in-out);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}

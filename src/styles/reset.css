@@ -1,0 +1,129 @@
+/* ============================================================
+   EduNova Reset
+   reset.css — modern CSS reset (based on Josh Comeau's reset
+   with additional accessibility and form improvements)
+   ============================================================ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Prevent font size inflation on mobile */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+/* 4. Remove default list styles on ul/ol with a role of list
+      (accessibility-safe — only when list role is explicit) */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* 5. Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: var(--leading-normal, 1.5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select,
+optgroup {
+  font: inherit;
+  color: inherit;
+}
+
+/* 9. Remove button defaults */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 10. Remove default fieldset styles */
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* 11. Remove default table borders/spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 12. Remove default link decoration */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 13. Accessible hidden utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 14. Create a root stacking context */
+#root {
+  isolation: isolate;
+}
+
+/* 15. Remove animations for users who prefer no motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

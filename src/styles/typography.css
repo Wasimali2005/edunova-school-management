@@ -1,0 +1,237 @@
+/* ============================================================
+   EduNova Typography
+   typography.css — Inter font import + typographic base styles
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   Google Fonts — Inter (variable font, full weight range)
+   ---------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ----------------------------------------------------------
+   Base typographic defaults
+   ---------------------------------------------------------- */
+html {
+  font-size: 16px; /* 1rem = 16px baseline */
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+
+  /* Enable Inter's optical size axis for better rendering */
+  font-optical-sizing: auto;
+}
+
+/* ----------------------------------------------------------
+   Heading scale
+   ---------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-tighter);
+  line-height: var(--leading-none);
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h5 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h6 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ----------------------------------------------------------
+   Body text
+   ---------------------------------------------------------- */
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+p + p {
+  margin-top: var(--space-4);
+}
+
+/* ----------------------------------------------------------
+   Lead / intro paragraph
+   ---------------------------------------------------------- */
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-regular);
+}
+
+/* ----------------------------------------------------------
+   Inline text utilities
+   ---------------------------------------------------------- */
+strong,
+b {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+small {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+/* ----------------------------------------------------------
+   Code & pre
+   ---------------------------------------------------------- */
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--bg-muted);
+  color: var(--color-accent-brand);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-base);
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  background-color: var(--surface-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-6);
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  border-radius: 0;
+}
+
+/* ----------------------------------------------------------
+   Links
+   ---------------------------------------------------------- */
+a {
+  color: var(--color-brand);
+  text-underline-offset: 0.2em;
+  transition: var(--transition-colors);
+}
+
+a:hover {
+  color: var(--color-brand-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* ----------------------------------------------------------
+   Blockquote
+   ---------------------------------------------------------- */
+blockquote {
+  border-left: 4px solid var(--color-brand);
+  padding: var(--space-4) var(--space-6);
+  margin: var(--space-6) 0;
+  background-color: var(--color-brand-subtle);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* ----------------------------------------------------------
+   Lists
+   ---------------------------------------------------------- */
+ul,
+ol {
+  padding-left: var(--space-6);
+}
+
+li {
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+li + li {
+  margin-top: var(--space-1);
+}
+
+/* ----------------------------------------------------------
+   HR
+   ---------------------------------------------------------- */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: var(--space-8) 0;
+}
+
+/* ----------------------------------------------------------
+   Selection
+   ---------------------------------------------------------- */
+::selection {
+  background-color: var(--color-brand-muted);
+  color: var(--text-primary);
+}
+
+/* ----------------------------------------------------------
+   Responsive typographic scale
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  h4 { font-size: var(--text-xl);  }
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl);  }
+}
