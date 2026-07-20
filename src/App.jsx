@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar, Footer } from './components'
+import HomePage from './pages/HomePage'
 
 /* ------------------------------------------------------------------ */
-/* App shell — Navbar + main content area + Footer                     */
-/* Pages will be added in future phases                                */
+/* App shell — Navbar + routed pages + Footer                          */
 /* ------------------------------------------------------------------ */
 function PlaceholderPage({ title }) {
   return (
@@ -33,7 +33,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/"                      element={<PlaceholderPage title="Home" />} />
+        <Route path="/"                      element={<HomePage />} />
         <Route path="/courses"               element={<PlaceholderPage title="All Courses" />} />
         <Route path="/courses/:category"     element={<PlaceholderPage title="Course Category" />} />
         <Route path="/programs"              element={<PlaceholderPage title="Programs" />} />
