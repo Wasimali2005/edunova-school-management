@@ -1,0 +1,239 @@
+/* ============================================================
+   Button Component
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-none);
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-150) var(--ease-in-out),
+    border-color     var(--duration-150) var(--ease-in-out),
+    color            var(--duration-150) var(--ease-in-out),
+    box-shadow       var(--duration-150) var(--ease-in-out),
+    opacity          var(--duration-150) var(--ease-in-out),
+    transform        var(--duration-150) var(--ease-in-out);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   Loading state
+   ---------------------------------------------------------- */
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ----------------------------------------------------------
+   Icon slot
+   ---------------------------------------------------------- */
+.iconLeft,
+.iconRight {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   SIZE VARIANTS
+   ---------------------------------------------------------- */
+.sm {
+  font-size: var(--text-xs);
+  padding: var(--space-1-5) var(--space-3);
+  border-radius: var(--radius-md);
+  gap: var(--space-1-5);
+}
+
+.md {
+  font-size: var(--text-sm);
+  padding: var(--space-2-5) var(--space-5);
+}
+
+.lg {
+  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-xl);
+}
+
+.xl {
+  font-size: var(--text-lg);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-xl);
+}
+
+/* Full width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Icon-only (square) */
+.iconOnly {
+  padding: var(--space-2-5);
+}
+.iconOnly.sm { padding: var(--space-1-5); }
+.iconOnly.lg { padding: var(--space-3);   }
+.iconOnly.xl { padding: var(--space-4);   }
+
+/* ----------------------------------------------------------
+   VARIANT — primary
+   ---------------------------------------------------------- */
+.primary {
+  background-color: var(--color-brand);
+  color: var(--text-on-primary);
+  border-color: var(--color-brand);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
+  box-shadow: var(--shadow-brand);
+}
+
+.primary:active:not(:disabled) {
+  background-color: var(--color-brand-active);
+  border-color: var(--color-brand-active);
+}
+
+/* ----------------------------------------------------------
+   VARIANT — secondary
+   ---------------------------------------------------------- */
+.secondary {
+  background-color: var(--surface-1);
+  color: var(--text-primary);
+  border-color: var(--border-color-strong);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--bg-subtle);
+  border-color: var(--color-neutral-400);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary:active:not(:disabled) {
+  background-color: var(--bg-muted);
+}
+
+/* ----------------------------------------------------------
+   VARIANT — outline
+   ---------------------------------------------------------- */
+.outline {
+  background-color: transparent;
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--color-brand-subtle);
+  box-shadow: var(--shadow-brand);
+}
+
+.outline:active:not(:disabled) {
+  background-color: var(--color-brand-muted);
+}
+
+/* ----------------------------------------------------------
+   VARIANT — ghost
+   ---------------------------------------------------------- */
+.ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--bg-muted);
+  color: var(--text-primary);
+}
+
+.ghost:active:not(:disabled) {
+  background-color: var(--border-color);
+}
+
+/* ----------------------------------------------------------
+   VARIANT — accent
+   ---------------------------------------------------------- */
+.accent {
+  background-color: var(--color-accent-brand);
+  color: var(--text-on-primary);
+  border-color: var(--color-accent-brand);
+}
+
+.accent:hover:not(:disabled) {
+  background-color: var(--color-accent-brand-hover);
+  border-color: var(--color-accent-brand-hover);
+  box-shadow: var(--shadow-accent);
+}
+
+/* ----------------------------------------------------------
+   VARIANT — danger
+   ---------------------------------------------------------- */
+.danger {
+  background-color: var(--color-danger-500);
+  color: var(--text-on-primary);
+  border-color: var(--color-danger-500);
+}
+
+.danger:hover:not(:disabled) {
+  background-color: var(--color-danger-600);
+  border-color: var(--color-danger-600);
+  box-shadow: 0 4px 14px 0 rgba(244, 63, 94, 0.35);
+}
+
+/* ----------------------------------------------------------
+   VARIANT — link
+   ---------------------------------------------------------- */
+.link {
+  background-color: transparent;
+  color: var(--color-brand);
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.link:hover:not(:disabled) {
+  color: var(--color-brand-hover);
+}

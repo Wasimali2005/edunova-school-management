@@ -1,0 +1,95 @@
+/* ============================================================
+   Tag Component — topic / category label (removable)
+   ============================================================ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-none);
+  white-space: nowrap;
+  padding: var(--space-1-5) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-2);
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  user-select: none;
+}
+
+/* Clickable/interactive tag */
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  background-color: var(--color-brand-subtle);
+  border-color: var(--color-primary-200);
+  color: var(--color-brand);
+}
+
+.interactive:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Selected state */
+.selected {
+  background-color: var(--color-brand-muted);
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ----------------------------------------------------------
+   Remove button
+   ---------------------------------------------------------- */
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.6;
+  transition: opacity var(--duration-150) var(--ease-in-out),
+              background-color var(--duration-150) var(--ease-in-out);
+  flex-shrink: 0;
+}
+
+.removeBtn:hover {
+  opacity: 1;
+  background-color: var(--color-danger-100);
+  color: var(--color-danger-600);
+}
+
+.removeBtn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-full);
+}
+
+/* ----------------------------------------------------------
+   Dark mode
+   ---------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  .interactive:hover {
+    background-color: var(--color-brand-subtle);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  .selected {
+    background-color: var(--color-brand-subtle);
+  }
+  .removeBtn:hover {
+    background-color: rgba(244, 63, 94, 0.2);
+    color: var(--color-danger-400);
+  }
+}

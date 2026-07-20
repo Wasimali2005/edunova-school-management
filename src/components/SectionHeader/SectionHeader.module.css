@@ -1,0 +1,144 @@
+/* ============================================================
+   SectionHeader Component — page-section title block
+   ============================================================ */
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ----------------------------------------------------------
+   ALIGNMENT VARIANTS
+   ---------------------------------------------------------- */
+.left   { align-items: flex-start; text-align: left; }
+.center { align-items: center;     text-align: center; }
+.right  { align-items: flex-end;   text-align: right; }
+
+/* ----------------------------------------------------------
+   Eyebrow — small label above the title
+   ---------------------------------------------------------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.eyebrowLine {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-brand);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   Title
+   ---------------------------------------------------------- */
+.title {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+/* SIZE VARIANTS */
+.titleSm  { font-size: var(--text-2xl); }
+.titleMd  { font-size: var(--text-4xl); }
+.titleLg  { font-size: var(--text-5xl); }
+
+/* Gradient highlight on last word / span */
+.titleGradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand) 0%,
+    var(--color-accent-brand) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ----------------------------------------------------------
+   Subtitle / description
+   ---------------------------------------------------------- */
+.subtitle {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 640px;
+}
+
+/* Constrain subtitle width in center alignment */
+.center .subtitle {
+  max-width: 560px;
+}
+
+/* ----------------------------------------------------------
+   Divider bar beneath title
+   ---------------------------------------------------------- */
+.divider {
+  width: 48px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-brand) 0%,
+    var(--color-accent-brand) 100%
+  );
+  border-radius: var(--radius-full);
+  margin-top: var(--space-1);
+}
+
+/* Wider divider for center alignment */
+.center .divider {
+  width: 64px;
+}
+
+/* ----------------------------------------------------------
+   Action slot (e.g. "View all" button)
+   ---------------------------------------------------------- */
+.headerRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.headerRow .sectionHeader {
+  flex: 1;
+}
+
+.actionSlot {
+  flex-shrink: 0;
+  padding-bottom: var(--space-1);
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  .titleLg { font-size: var(--text-4xl); }
+  .titleMd { font-size: var(--text-3xl); }
+  .titleSm { font-size: var(--text-2xl); }
+  .subtitle { font-size: var(--text-base); }
+}
+
+@media (max-width: 640px) {
+  .titleLg { font-size: var(--text-3xl); }
+  .titleMd { font-size: var(--text-2xl); }
+  .headerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

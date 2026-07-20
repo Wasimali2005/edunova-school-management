@@ -1,0 +1,145 @@
+/* ============================================================
+   Card Component
+   ============================================================ */
+
+.card {
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  position: relative;
+  transition:
+    box-shadow   var(--duration-200) var(--ease-in-out),
+    border-color var(--duration-200) var(--ease-in-out),
+    transform    var(--duration-200) var(--ease-in-out);
+}
+
+/* ----------------------------------------------------------
+   PADDING VARIANTS
+   ---------------------------------------------------------- */
+.none    { padding: 0; }
+.sm      { padding: var(--space-4); }
+.md      { padding: var(--space-6); }
+.lg      { padding: var(--space-8); }
+
+/* When using sub-parts (media/header/body/footer), no root padding */
+.card:has(.media) { padding: 0; }
+
+/* ----------------------------------------------------------
+   SHADOW VARIANTS
+   ---------------------------------------------------------- */
+.shadow-none { box-shadow: none; }
+.shadow-sm   { box-shadow: var(--shadow-sm); }
+.shadow-md   { box-shadow: var(--shadow-md); }
+.shadow-lg   { box-shadow: var(--shadow-lg); }
+
+/* ----------------------------------------------------------
+   HOVERABLE
+   ---------------------------------------------------------- */
+.hoverable {
+  cursor: pointer;
+}
+
+.hoverable:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-color-strong);
+  transform: translateY(-2px);
+}
+
+.hoverable:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), var(--shadow-md);
+}
+
+.hoverable:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ----------------------------------------------------------
+   FLAT (no border, subtle bg)
+   ---------------------------------------------------------- */
+.flat {
+  border-color: transparent;
+  background-color: var(--surface-2);
+}
+
+.flat:hover {
+  background-color: var(--surface-3);
+}
+
+/* ----------------------------------------------------------
+   OUTLINED (border emphasis, no shadow)
+   ---------------------------------------------------------- */
+.outlined {
+  box-shadow: none;
+  border-width: 2px;
+}
+
+/* ----------------------------------------------------------
+   Sub-components
+   ---------------------------------------------------------- */
+
+/* Media area (image / video at top) */
+.media {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.media img,
+.media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-300) var(--ease-in-out);
+}
+
+.hoverable:hover .media img,
+.hoverable:hover .media video {
+  transform: scale(1.03);
+}
+
+/* Header */
+.header {
+  padding: var(--space-6) var(--space-6) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+/* Body */
+.body {
+  padding: var(--space-4) var(--space-6);
+  flex: 1;
+}
+
+/* Footer */
+.footer {
+  padding: 0 var(--space-6) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* When card has media, adjust inner padding */
+.card:has(.media) .header { padding-top: var(--space-5); }
+
+/* ----------------------------------------------------------
+   Highlight accent bar (top border stripe)
+   ---------------------------------------------------------- */
+.accentBar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-brand) 0%,
+    var(--color-accent-brand) 100%
+  );
+  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+}
