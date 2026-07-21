@@ -3,6 +3,7 @@ import { Navbar, Footer } from './components'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ModulesPage from './pages/ModulesPage'
+import ContactPage from './pages/ContactPage'
 
 /* ------------------------------------------------------------------ */
 /* App shell — Navbar + routed pages + Footer                          */
@@ -45,7 +46,7 @@ export default function App() {
         <Route path="/blog"                  element={<PlaceholderPage title="Blog" />} />
         <Route path="/about"                 element={<AboutPage />} />
         <Route path="/modules"               element={<ModulesPage />} />
-        <Route path="/contact"               element={<PlaceholderPage title="Contact" />} />
+        <Route path="/contact"               element={<ContactPage />} />
         <Route path="/help"                  element={<PlaceholderPage title="Help Centre" />} />
         <Route path="/careers"               element={<PlaceholderPage title="Careers" />} />
         <Route path="/demo"                  element={<PlaceholderPage title="Book a Free Demo" />} />
