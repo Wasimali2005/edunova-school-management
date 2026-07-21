@@ -1,6 +1,7 @@
 import Hero from '../sections/Hero'
 import Features from '../sections/Features'
 import HowItWorks from '../sections/HowItWorks'
+import WhyChoose from '../sections/WhyChoose'
 
 /**
  * HomePage — assembles all home page sections.
@@ -12,7 +13,8 @@ export default function HomePage() {
       <Hero />
       <Features />
       <HowItWorks />
-      {/* Phase 8+ sections will be composed here */}
+      <WhyChoose />
+      {/* Phase 9+ sections will be composed here */}
     </main>
   )
 }
