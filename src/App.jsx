@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar, Footer } from './components'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import ModulesPage from './pages/ModulesPage'
 
 /* ------------------------------------------------------------------ */
 /* App shell — Navbar + routed pages + Footer                          */
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/pricing"               element={<PlaceholderPage title="Pricing" />} />
         <Route path="/blog"                  element={<PlaceholderPage title="Blog" />} />
         <Route path="/about"                 element={<AboutPage />} />
+        <Route path="/modules"               element={<ModulesPage />} />
         <Route path="/contact"               element={<PlaceholderPage title="Contact" />} />
         <Route path="/help"                  element={<PlaceholderPage title="Help Centre" />} />
         <Route path="/careers"               element={<PlaceholderPage title="Careers" />} />
