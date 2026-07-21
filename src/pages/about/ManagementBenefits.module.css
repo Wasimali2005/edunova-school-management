@@ -1,0 +1,183 @@
+/* ============================================================
+   About Page — School Management Benefits
+   ============================================================ */
+
+.section {
+  position: relative;
+  background-color: var(--bg-subtle);
+  padding-block: var(--space-24);
+  overflow: hidden;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(139, 92, 246, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: var(--space-16);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-14);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-inline: var(--space-4);
+    gap: var(--space-10);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.benefitCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background-color: var(--surface-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  transition:
+    border-color var(--duration-300) var(--ease-in-out),
+    box-shadow   var(--duration-300) var(--ease-in-out);
+}
+
+.benefitCard:hover {
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--color-brand-subtle);
+  color: var(--color-brand);
+  transition: transform var(--duration-300) var(--ease-bounce);
+}
+
+.benefitCard:hover .iconWrap {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .iconWrap {
+    background-color: rgba(59, 130, 246, 0.15);
+  }
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  line-height: var(--leading-snug);
+  margin: 0;
+  transition: color var(--duration-200) var(--ease-in-out);
+}
+
+.benefitCard:hover .cardTitle {
+  color: var(--color-brand);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.checkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-color);
+}
+
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: var(--leading-normal);
+}
+
+.checkDot {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand-subtle);
+  color: var(--color-brand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .checkDot {
+    background-color: rgba(59, 130, 246, 0.15);
+  }
+}
