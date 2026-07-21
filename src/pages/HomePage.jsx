@@ -3,6 +3,7 @@ import Features from '../sections/Features'
 import HowItWorks from '../sections/HowItWorks'
 import WhyChoose from '../sections/WhyChoose'
 import Testimonials from '../sections/Testimonials'
+import CTA from '../sections/CTA'
 
 /**
  * HomePage — assembles all home page sections.
@@ -16,7 +17,7 @@ export default function HomePage() {
       <HowItWorks />
       <WhyChoose />
       <Testimonials />
-      {/* Phase 10+ sections will be composed here */}
+      <CTA />
     </main>
   )
 }
