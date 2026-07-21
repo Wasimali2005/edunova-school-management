@@ -1,5 +1,6 @@
 import Hero from '../sections/Hero'
 import Features from '../sections/Features'
+import HowItWorks from '../sections/HowItWorks'
 
 /**
  * HomePage — assembles all home page sections.
@@ -10,7 +11,8 @@ export default function HomePage() {
     <main id="main-content">
       <Hero />
       <Features />
-      {/* Phase 7+ sections will be composed here */}
+      <HowItWorks />
+      {/* Phase 8+ sections will be composed here */}
     </main>
   )
 }
